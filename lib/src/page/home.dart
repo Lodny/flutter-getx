@@ -1,3 +1,4 @@
+import 'package:ex_getx/src/page/normal/first.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -15,7 +16,9 @@ class Home extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                print('pressed');
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => FirstPage())
+                );
               },
               child: Text('일반적인 라우트'),
             ),
