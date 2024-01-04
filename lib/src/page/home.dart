@@ -9,6 +9,19 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text('라우트 관리 홈'),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                print('pressed');
+              },
+              child: Text('일반적인 라우트'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
