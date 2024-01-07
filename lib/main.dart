@@ -1,4 +1,10 @@
+import 'package:ex_getx/src/page/getx/arguments.dart';
+import 'package:ex_getx/src/page/getx/first.dart';
+import 'package:ex_getx/src/page/getx/second.dart';
+import 'package:ex_getx/src/page/getx/user.dart';
 import 'package:ex_getx/src/page/home.dart';
+import 'package:ex_getx/src/page/normal/first.dart';
+import 'package:ex_getx/src/page/normal/second.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,7 +32,20 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Home(),
+      // home: Home(),
+      initialRoute: '/',
+      // routes: {
+      //   '/': (context) => Home(),
+      //   '/first': (context) => FirstPage(),
+      //   '/second': (context) => SecondPage(),
+      // },
+      getPages: [
+        GetPage(name: '/', page: () => Home(), transition: Transition.zoom),
+        GetPage(name: '/first', page: () => GetXFirstPage(), transition: Transition.zoom),
+        GetPage(name: '/second', page: () => GetXSecondPage(), transition: Transition.zoom),
+        GetPage(name: '/arguments', page: () => GetXArgumentsPage(), transition: Transition.zoom),
+        GetPage(name: '/user/:uid', page: () => GetXUserPage(), transition: Transition.zoom),
+      ],
     );
   }
 }

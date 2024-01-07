@@ -2,19 +2,22 @@ import 'package:ex_getx/src/page/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class GetXSecondPage extends StatelessWidget {
-  const GetXSecondPage({super.key});
+import 'first.dart';
+
+class GetXArgumentsPage extends StatelessWidget {
+  const GetXArgumentsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("GetX Second Page"),
+        title: Text("GetX Arguments Page"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text('${(Get.arguments as UserInfo).name} - ${(Get.arguments as UserInfo).age.toString()}'),
             ElevatedButton(
               onPressed: () => Get.back(),
               child: Text('뒤로 이동'),

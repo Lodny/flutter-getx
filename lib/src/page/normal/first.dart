@@ -22,6 +22,10 @@ class FirstPage extends StatelessWidget {
                 );
               },
             ),
+            ElevatedButton(
+              child: Text('다음페이지 이동(Named)'),
+              onPressed: () => Navigator.of(context).pushNamed('/second'),
+            ),
           ],
         ),
       ),
