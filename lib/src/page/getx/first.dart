@@ -1,14 +1,16 @@
-import 'package:ex_getx/src/page/normal/second.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class FirstPage extends StatelessWidget {
-  const FirstPage({super.key});
+import 'second.dart';
+
+class GetXFirstPage extends StatelessWidget {
+  const GetXFirstPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Page'),
+        title: Text('GetX First Page'),
       ),
       body: Center(
         child: Column(
@@ -16,11 +18,7 @@ class FirstPage extends StatelessWidget {
           children: [
             ElevatedButton(
               child: Text('다음페이지 이동'),
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => SecondPage())
-                );
-              },
+              onPressed: () => Get.to(GetXSecondPage()),
             ),
           ],
         ),
